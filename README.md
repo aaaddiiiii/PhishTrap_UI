@@ -1,5 +1,5 @@
 # PhishTrap_UI
-PhishTrap 🛡️ | A simple phishing detection tool that analyzes URLs, emails, and QR codes to assess phishing risk—no database, just instant results. Stay safe online ! 🚀 Built for quick and reliable phishing detection with a user-friendly interface.
+PhishTrap is a phishing detection tool designed to analyze URLs, emails, and QR codes for potential threats. This repository contains only the **UI**, built with **HTML and CSS**. It serves as the frontend design, with no backend functionality or phishing detection logic implemented yet.  
 
 # 🛡️ PhishTrap  
 
