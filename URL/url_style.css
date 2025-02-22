@@ -1,0 +1,310 @@
+@font-face {
+    font-family: 'BioRhyme-Semibold';
+    src: url('../FONTS/BioRhyme-SemiBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BioRhyme-Regular';
+    src: url('../FONTS/BioRhyme-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCode-Semibold';
+    src: url('../FONTS/FiraCode-SemiBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCode-Regular';
+    src: url('../FONTS/FiraCode-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+body {
+    font-family: 'BioRhyme-Semibold',sans-serif;
+    background-color: #111111;
+    color: white;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    font-family: 'BioRhyme-Regular',sans-serif;
+    background-color: #A70000;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 17px;
+    height: 75px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    cursor: pointer;
+
+    position: relative;
+    text-decoration: none;
+    font-family: 'BioRhyme-Semibold', sans-serif;
+    color: white;
+    font-size: 25px;
+    display: inline-block;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    background-color: white; /* Underline color */
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px; /* Adjust distance from text */
+    transition: width 0.3s ease-in-out;
+    border-radius: 5px; /* Adjust for rounded effect */
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+li a{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+li a::after {
+    content: "";
+    position: absolute;
+    background-color: white; /* Underline color */
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+li a:hover {
+    color: white;
+}
+
+li a:hover::after {
+    width: 100%;
+}
+
+
+.logoo {
+    padding-top: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    padding-bottom:95px;
+}
+
+.Phish {
+    color: white;
+}
+
+.Trap {
+    color: #A70000;
+}
+
+.h2{
+    font-family: inherit;
+    color: white;
+    font-size: 18px;
+    padding-bottom: 17px;
+}
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 7cm;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    padding-left: 15px;
+    justify-content: center;
+    padding-top: 0;
+    z-index: 999; /* Ensures side panel appears above other elements */
+}
+
+.contents {
+    padding-left: 8cm; /* Increases spacing to avoid side panel overlap */
+    padding-top: 100px;
+}
+
+.sidebutton {
+    font-family: 'BioRhyme-Semibold',sans-serif;
+    margin-top: 17px;
+    height: 60px;
+    width: 200px;
+    outline: none;
+    cursor: pointer;
+    border: 2.5px solid #A70000; /* Added border */
+    padding: 0.9rem 2rem;
+    margin-right: 20px; /* Adds spacing between buttons */
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-size: 17px;
+    border-radius: 10px; /* Changed from 500px */
+    overflow: hidden;
+    background: #A70000; /* Changed from green */
+    color: ghostwhite;
+}
+
+.sidebutton:active {
+    transform: scale(0.90); 
+    transition: transform 0.05s ease-out; 
+}
+
+.sidebutton:not(:active) {
+    transition: transform 0.15s cubic-bezier(0.2, 0, 0.3, 1); 
+}
+
+.sidebutton span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+.sidebutton:hover span {
+    color: black;
+}
+
+.sidebutton::before,
+.sidebutton::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.sidebutton::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.sidebutton:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+/* Fully fill the first button (Email) with #A70000 */
+.sidebutton:nth-child(2) {
+    font-family: 'BioRhyme-Semibold',sans-serif;
+    background: #A70000 !important; /* Full solid color */
+    border-color: #A70000 !important; /* Ensure border matches */
+    color: black !important; /* Text color */
+    transition: none !important; /* Disable animations */
+}
+
+/* Remove hover effect animations for Email button */
+.sidebutton:nth-child(2):hover::before,
+.sidebutton:nth-child(2)::before {
+    display: none !important;
+}
+
+/* Ensure no color change on hover */
+.sidebutton:nth-child(2):hover {
+    background: #A70000 !important;
+    color: black !important;
+}
+
+/* Prevent hover effect on text */
+.sidebutton:nth-child(2):hover span {
+    color: black !important;
+}
+
+.input-container {
+    font-family: 'FiraCode-Regular';
+    margin-bottom: 20px;
+    width: 1000px;
+    height: 55px;
+    border-radius: 12px;
+    display: flex;
+    background: linear-gradient(173deg, #23272f 0%, #14161a 100%);
+    padding: 0.3rem;
+    margin-bottom: 100px;
+    gap: 0.3rem;
+}
+
+.input-container input {
+    font-family: 'FiraCode-Regular';
+    border-radius: 12px;
+    background: #23272f;
+    width: 100%;
+    flex-basis: 100%;
+    padding: 1rem;
+    border: 1px solid transparent;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    box-shadow: none; /* Removes static shadow */
+}
+
+.input-container input:focus {
+    border: 1px solid #A70000;
+    outline: none;
+    box-shadow: 
+      0px 0px 10px rgba(167, 0, 0, 0.7), 
+      0px 0px 20px rgba(167, 0, 0, 0.5); /* Adds red glow when focused */
+}
+
+@media (max-width: 500px) {
+    .input-container {
+        flex-direction: column;
+    }
+
+    .input-container input {
+        border-radius: 0.8rem;
+    }
+}
+
+.footer {
+    background-color: #A70000;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    position: fixed;
+    padding-top: 3px;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    z-index: 1000;
+}
+

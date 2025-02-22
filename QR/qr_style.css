@@ -1,0 +1,392 @@
+@font-face {
+    font-family: 'BioRhyme-Semibold';
+    src: url('../FONTS/BioRhyme-SemiBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BioRhyme-Regular';
+    src: url('../FONTS/BioRhyme-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCode-Semibold';
+    src: url('../FONTS/FiraCode-SemiBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCode-Regular';
+    src: url('../FONTS/FiraCode-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+body {
+    font-family: 'BioRhyme-Semibold',sans-serif;
+    background-color: #111111;
+    color: white;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    font-family: 'BioRhyme-Regular',sans-serif;
+    background-color: #A70000;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 17px;
+    height: 75px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  font-family: 'BioRhyme-Semibold', sans-serif;
+  color: white;
+  font-size: 25px;
+  display: inline-block;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  background-color: white; /* Underline color */
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -5px; /* Adjust distance from text */
+  transition: width 0.3s ease-in-out;
+  border-radius: 5px; /* Adjust for rounded effect */
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
+  list-style: none;
+  display: inline-block;
+}
+
+li a{
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+li a::after {
+  content: "";
+  position: absolute;
+  background-color: white; /* Underline color */
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+li a:hover {
+  color: white;
+}
+
+li a:hover::after {
+  width: 100%;
+}
+
+
+.logoo {
+    padding-top: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    padding-bottom: 40px;
+}
+
+.Phish {
+    color: white;
+}
+
+.Trap {
+    color: #A70000;
+}
+
+.h2{
+    font-family: inherit;
+    color: white;
+    font-size: 18px;
+    padding-bottom: 50px;
+}
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 7cm;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    padding-left: 15px;
+    justify-content: center;
+    padding-top: 0;
+    z-index: 999; /* Ensures side panel appears above other elements */
+}
+
+.contents {
+    padding-left: 8cm; /* Increases spacing to avoid side panel overlap */
+    padding-top: 100px;
+    padding-right: 40px;
+}
+
+.sidebutton {
+    font-family: 'BioRhyme-Semibold',sans-serif;
+    margin-top: 17px;
+    height: 60px;
+    width: 200px;
+    outline: none;
+    cursor: pointer;
+    border: 2.5px solid #A70000; /* Added border */
+    padding: 0.9rem 2rem;
+    margin-right: 20px; /* Adds spacing between buttons */
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-size: 17px;
+    border-radius: 10px; /* Changed from 500px */
+    overflow: hidden;
+    background: #A70000; /* Changed from green */
+    color: ghostwhite;
+}
+
+.sidebutton:active {
+    transform: scale(0.90); 
+    transition: transform 0.05s ease-out; 
+}
+
+.sidebutton:not(:active) {
+    transition: transform 0.15s cubic-bezier(0.2, 0, 0.3, 1); 
+}
+
+.sidebutton span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+.sidebutton:hover span {
+    color: black;
+}
+
+.sidebutton::before,
+.sidebutton::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.sidebutton::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.sidebutton:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+/* Fully fill the first button (Email) with #A70000 */
+.sidebutton:nth-child(3) {
+    font-family: 'BioRhyme-Semibold',sans-serif;
+    background: #A70000 !important; /* Full solid color */
+    border-color: #A70000 !important; /* Ensure border matches */
+    color: black !important; /* Text color */
+    transition: none !important; /* Disable animations */
+}
+
+/* Remove hover effect animations for Email button */
+.sidebutton:nth-child(3):hover::before,
+.sidebutton:nth-child(3)::before {
+    display: none !important;
+}
+
+/* Ensure no color change on hover */
+.sidebutton:nth-child(3):hover {
+    background: #A70000 !important;
+    color: black !important;
+}
+
+/* Prevent hover effect on text */
+.sidebutton:nth-child(3):hover span {
+    color: black !important;
+}
+
+.container {
+    margin-bottom: 30px;
+    --transition: 350ms;
+    --folder-W: 120px;
+    --folder-H: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    background: linear-gradient(135deg, #23272f, #14161a); /* Darker Gradient */
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    position: relative;
+}
+
+  
+  .folder {
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 60px);
+    animation: float 2.5s infinite ease-in-out;
+    transition: transform var(--transition) ease;
+  }
+  
+  .folder:hover {
+    transform: scale(1.05);
+  }
+  
+  .folder .front-side,
+  .folder .back-side {
+    position: absolute;
+    transition: transform var(--transition);
+    transform-origin: bottom center;
+  }
+  
+  .folder .back-side::before,
+  .folder .back-side::after {
+    content: "";
+    display: block;
+    background-color: white;
+    opacity: 0.5;
+    z-index: 0;
+    width: var(--folder-W);
+    height: var(--folder-H);
+    position: absolute;
+    transform-origin: bottom center;
+    border-radius: 15px;
+    transition: transform 350ms;
+    z-index: 0;
+  }
+  
+  .container:hover .back-side::before {
+    transform: rotateX(-5deg) skewX(5deg);
+  }
+  .container:hover .back-side::after {
+    transform: rotateX(-15deg) skewX(12deg);
+  }
+  
+  .folder .front-side {
+    z-index: 1;
+  }
+  
+  .container:hover .front-side {
+    transform: rotateX(-40deg) skewX(15deg);
+  }
+  
+  .folder .tip {
+    background: linear-gradient(135deg, #ff9a56, #ff6f56);
+    width: 80px;
+    height: 20px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -10px;
+    z-index: 2;
+  }
+  
+  .folder .cover {
+    background: linear-gradient(135deg, #ffe563, #ffc663);
+    width: var(--folder-W);
+    height: var(--folder-H);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  
+  .custom-file-upload {
+    font-size: 1.1em;
+    color: #ffffff;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background var(--transition) ease;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 35px;
+    position: relative;
+  }
+  
+  .custom-file-upload:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  
+  .custom-file-upload input[type="file"] {
+    display: none;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+  
+    50% {
+      transform: translateY(-20px);
+    }
+  
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+
+.footer {
+    background-color: #A70000;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    position: fixed;
+    padding-top: 3px;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    z-index: 1000;
+}
+

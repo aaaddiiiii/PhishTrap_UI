@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'BioRhyme-Semibold';
+    src: url('FONTS/BioRhyme-SemiBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BioRhyme-Regular';
+    src: url('FONTS/BioRhyme-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCode-Semibold';
+    src: url('FONTS/FiraCode-SemiBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCode-Regular';
+    src: url('FONTS/FiraCode-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+body {
+    font-family: 'BioRhyme-Semibold',sans-serif;
+    background-color: #111111;
+    color: white;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    font-family: 'BioRhyme-Regular',sans-serif;
+    background-color: #A70000;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 17px;
+    height: 75px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 25px;
+}
+
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+li a{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+li a::after {
+    content: "";
+    position: absolute;
+    background-color: white; /* Underline color */
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+li a:hover {
+    color: white;
+}
+
+li a:hover::after {
+    width: 100%;
+}
+
+.contents{
+    padding-top: 135px;
+    padding-left: 100px;
+    padding-right: 80px;
+}
+
+.logo {
+    display: inline; /* Ensure inline behavior */
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    font-family: 'BioRhyme-Semibold', sans-serif;
+    color: white;
+    gap: 0px;
+    white-space: nowrap; /* Prevents line breaks */
+}
+
+.Phish, .Trap {
+    display: inline; /* Keep them inline */
+}
+
+
+.logo::after {
+    content: "";
+    position: absolute;
+    background-color: white; /* Underline color */
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px; /* Adjust distance from text */
+    transition: width 0.3s ease-in-out;
+    border-radius: 5px; /* Adjust for rounded effect */
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+
+.Phish {
+    font-size: 32px;
+    color: white;
+}
+
+.Trap {
+    font-size: 32px;
+    color: #A70000;
+}
+
+.logoo{
+    margin-bottom: 45px;
+}
+
+.desc {
+    font-family: 'FiraCode-Regular', sans-serif;
+    font-size: 22px;
+    color: #ffffff;
+    line-height: 1.45;
+}
+
+.desc:first-of-type {
+    padding-bottom: 17px;
+}
+
+.hbutton {
+    font-family: 'BioRhyme-Semibold',sans-serif;
+    margin-top: 17px;
+    height: 60px;
+    width: 160px;
+    outline: none;
+    cursor: pointer;
+    border: 2.5px solid #A70000; /* Added border */
+    padding: 0.9rem 2rem;
+    margin-right: 20px; /* Adds spacing between buttons */
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-size: 17px;
+    border-radius: 10px; /* Changed from 500px */
+    overflow: hidden;
+    background: #A70000; /* Changed from green */
+    color: ghostwhite;
+}
+
+.hbutton:active {
+    transform: scale(0.90); 
+    transition: transform 0.05s ease-out; 
+}
+
+.hbutton:not(:active) {
+    transition: transform 0.15s cubic-bezier(0.2, 0, 0.3, 1); 
+}
+
+.hbutton span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+.hbutton:hover span {
+    color: black;
+}
+
+.hbutton::before,
+.hbutton::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hbutton::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.hbutton:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    background-color: #A70000;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 3px;
+}
