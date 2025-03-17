@@ -48,13 +48,22 @@ def process_url(url):
 
 def extract_url_from_qr(image_path):
     """Extracts URL from a QR code image."""
-    image = cv2.imread(image_path)
-    decoded_objects = decode(image)
+   
+    print(f"Processing image: {image_path}")  
     
-    for obj in decoded_objects:
-        return obj.data.decode("utf-8")  
-    
-    return None
+    image = cv2.imread(image_path)  
+    if image is None:
+        print("Failed to load image.")
+        return None
+
+    detector = cv2.QRCodeDetector()
+    url, _, _ = detector.detectAndDecode(image)  
+    if url:
+        print(f"Extracted URL: {url}")  
+        return url  
+    else:
+        print("No QR code detected in the image.")
+        return None 
 
 @app.route('/predict/email', methods=['POST'])
 def predict_email():
