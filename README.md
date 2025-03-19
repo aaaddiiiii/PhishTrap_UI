@@ -12,9 +12,9 @@ PhishTrap is a lightweight phishing detection tool that helps users assess the r
 - ⚡ **Fast & Secure** – No data storage, just real-time analysis.  
 
 ## 🛠️ Technologies Used  
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** (Specify if using an API or server-side processing)  
-- **Security:** AI-based or heuristic phishing detection  
+- **Frontend:** HTML, CSS 
+- **Backend:** Python   
+- **Model used:** Logistic Regression
 
 ## 🎯 How It Works  
 1. Enter a URL, email, or scan a QR code.  
