@@ -97,21 +97,28 @@ def predict_url_qr():
 def upload_qr():
     """Handles QR code uploads and predicts phishing status of extracted URL."""
     if 'file' not in request.files:
-        return jsonify({"error": "No file uploaded"}), 400
+        print("❌ No file in request")
+        return jsonify({"error": "No file uploaded"}), 415  # Change status to 415
 
     file = request.files['file']
+    if file.filename == '':
+        print("❌ No file selected")
+        return jsonify({"error": "No file selected"}), 400
+
     filename = os.path.join(UPLOAD_FOLDER, file.filename)
     file.save(filename)
 
+    print(f"✅ File received: {filename}")
+
     extracted_url = extract_url_from_qr(filename)
-    
     if not extracted_url:
         return jsonify({"error": "No URL found in QR code"}), 400
-    
+
     url_features = process_url(extracted_url)  
     prediction = url_qr_model.predict(url_features)[0]
-    
+
     return jsonify({"url": extracted_url, "prediction": "Phishing" if prediction == 1 else "Safe"})
+
 
 if __name__ == '__main__':
     app.run(debug=True)

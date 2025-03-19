@@ -37,19 +37,20 @@
         </div>
         <h2 class="h2">Enter the text to check for Phishing threats :</h2>
 
-        <!-- 🛠 Email Input Form -->
-        <form action="upload_email.php" method="POST">
-            <div class="input-container">
-                <textarea name="email_text" id="email_text" placeholder="Enter your text here" required></textarea>
-                <button type="submit">Check</button>
-            </div>
-        </form>
+<!-- 🛠 Email Input Form -->
+<form action="upload_email.php" method="POST">
+    <div class="input-container">
+        <textarea name="email_text" id="email_text" placeholder="Enter your text here" required></textarea>
+    </div>
+    <button class="check-button" type="submit">Check</button>
+</form>
 
-        <!-- 🛠 Text Box to Display Result -->
-        <h3 class="h3">RESULT :</h3>
-        <div class="result-container">
-            <input type="text" id="resultBox" value="<?php echo isset($_GET['result']) ? htmlspecialchars($_GET['result']) : ''; ?>" readonly>
-        </div>
+<!-- 🛠 Text Box to Display Result -->
+<h3 class="h3">RESULT :</h3>
+<div class="result-container">
+    <input type="text" id="resultBox" value="<?php echo isset($_GET['result']) ? htmlspecialchars($_GET['result']) : ''; ?>" readonly>
+</div>
+
     </div>
 
     <footer class="footer">

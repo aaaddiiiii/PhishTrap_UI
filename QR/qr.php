@@ -31,13 +31,24 @@
         </div>
         <h2 class="h2">Upload a QR Code Image to check for Phishing threats :</h2>
         
-        <!-- 🛠 QR Code Upload Form -->
-        <form action="upload_qr.php" method="POST" enctype="multipart/form-data">
-            <div class="input-container">
-                <input type="file" name="file" accept="image/*" required />
-                <button type="submit">Check</button>
+<!-- 🛠 QR Code Upload Form with Animation -->
+<form action="upload_qr.php" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <div class="folder">
+            <div class="front-side">
+                <div class="tip"></div>
+                <div class="cover"></div>
             </div>
-        </form>
+            <div class="back-side cover"></div>
+        </div>
+        <label class="custom-file-upload">
+            <input type="file" name="file" accept="image/*" required />
+            Choose a file
+        </label>
+        <button type="submit">Check</button>
+    </div>
+</form>
+
 
         <h3 class="h3">RESULT :</h3>
         <div id="result">

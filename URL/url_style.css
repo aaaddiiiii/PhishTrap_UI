@@ -260,7 +260,7 @@ li a:hover::after {
     display: flex;
     background: linear-gradient(173deg, #23272f 0%, #14161a 100%);
     padding: 0.3rem;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     gap: 0.3rem;
 }
 
@@ -308,3 +308,28 @@ li a:hover::after {
     z-index: 1000;
 }
 
+.check-button {
+    font-family: 'BioRhyme-Semibold', sans-serif;
+    background-color: #A70000;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: 2px solid #A70000;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block; /* Places button on a new line */
+    width: fit-content;
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+}
+
+.check-button:hover {
+    background-color: white;
+    color: #A70000;
+    border-color: white;
+}
+
+.check-button:active {
+    transform: scale(0.95);
+}

@@ -37,13 +37,14 @@
         </div>
         <h2 class="h2">Enter the URL to check for Phishing threats :</h2>
         
-        <!-- 🛠 URL Input Form (Submits to upload_url.php) -->
         <form action="upload_url.php" method="POST">
-            <div class="input-container">
-                <input name="url" placeholder="Enter the URL" type="text" required />
-                <button type="submit">Check</button>
-            </div>
-        </form>
+    <div class="input-container">
+        <input name="url" placeholder="Enter the URL" type="text" required />
+    </div>
+    <button class="check-button" type="submit">Check</button>
+</form>
+
+
 
         <h3 class="h3">RESULT :</h3>
         <div id="result">
