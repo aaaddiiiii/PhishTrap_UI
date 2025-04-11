@@ -259,12 +259,13 @@ li a:hover::after {
     font-family: 'FiraCode-Regular';
     margin-bottom: 20px;
     width: 1000px;
-    height: 275px;
+    height: 240px;
     display: flex;
     background: linear-gradient(173deg, #23272f 0%, #14161a 100%);
     border-radius: 19px;
     padding: 0.3rem;
     gap: 0.3rem;
+    margin-bottom: 30px;
 }
 
 .input-container textarea {
@@ -361,6 +362,53 @@ li a:hover::after {
     border-radius: 3px;
     text-align: center;
     height: 30px;
+}
+
+.result-container input::placeholder {
+    color: #d3d3d3;
+}
+
+/* 🔴 Styled Check Button */
+.check-button {
+    font-family: 'BioRhyme-Semibold', sans-serif;
+    background-color: #A70000;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: 2px solid #A70000;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block; /* Places button on a new line */
+    width: fit-content;
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.check-button:hover {
+    background-color: white;
+    color: #A70000;
+    border-color: white;
+}
+
+.check-button:active {
+    transform: scale(0.95);
+}
+
+/* 🟢 Transparent Prediction Box */
+.result-container input {
+    margin-top: 10px;
+    width: 200px;
+    height: 60px;
+    padding: 5px;
+    font-family: 'BioRhyme-Semibold',sans-serif;
+    font-size: 14px;
+    background-color: transparent; /* Makes the input box transparent */
+    color: white;
+    border: 2px solid #A70000; /* Keeps the red theme */
+    border-radius: 4px;
+    text-align: center;
+    height: 35px;
 }
 
 .result-container input::placeholder {
